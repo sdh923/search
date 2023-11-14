@@ -119,6 +119,11 @@ public class TotalSearchServiceImpl implements TotalSearchService{
 			exquery+="<SYS_TY:contains:"+searchVO.getSysTy()+">";
 		}
 		
+		/** 시스템 코드 검색*/
+		if(searchVO.getSysId() !="") {
+			exquery+="<SYS_ID:contains:"+searchVO.getSysId()+">";
+		}
+		
 		WNSearch wnsearch = new WNSearch(isDebug,false, collections, searchFields);
 		
 		wnsearch.setSf1Vo(sf1Vo);

@@ -11,11 +11,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.klic.search.service.ArkService;
+import com.klic.search.service.ArkVO;
+import com.klic.search.service.PopWordService;
+import com.klic.search.service.PopWordVO;
 import com.klic.search.service.SearchCollectionResult;
 import com.klic.search.service.SearchCollectionVO;
-import com.klic.search.service.SearchService;
 import com.klic.search.service.SearchVO;
 import com.klic.search.service.Sf1VO;
+import com.klic.search.service.RecommendService;
+import com.klic.search.service.TeaVO;
 import com.klic.search.service.TotalSearchService;
 import com.klic.search.service.common.WNUtils;
 
@@ -25,6 +32,18 @@ public class SearchController {
 	/** 통합 검색  */
 	@Resource(name="TotalSearchService")
 	private TotalSearchService totalSearchService;	
+	
+	/** 자동완성  */
+	@Resource(name="ArkService")
+	private ArkService arkService;
+	
+	/** 인기검색어  */
+	@Resource(name="PopwordService")
+	private PopWordService popWordService;
+	
+	/** 연관검색어  */
+	@Resource(name="RecommendService")
+	private RecommendService recommendService;
 	
 	
 	/** 통합검색 결과 API(JSON)*/
@@ -107,5 +126,37 @@ public class SearchController {
 		return result;
 	
 		
+	}
+	
+	/** 자동완성 결과 */
+	@ResponseBody
+	@RequestMapping(value="/search/ark.do", produces="application/json; charset=utf-8")
+	public Map<String, Object> ark(ArkVO arkVO) throws Exception {
+
+		Sf1VO sf1Vo = new Sf1VO();
+		String arkStr = arkService.getArk(arkVO, sf1Vo);
+		Map<String, Object> result = new ObjectMapper().readValue(arkStr, new TypeReference<Map<String, Object>>() {});
+		return result;
+	}
+	
+	/** 인기검색어 결과 */
+	@ResponseBody
+	@RequestMapping(value="/search/popword.do", produces="application/json; charset=utf-8")
+	public Map<String, Object> popword(PopWordVO popWordVo) throws Exception {
+		Sf1VO sf1Vo = new Sf1VO();
+		String popWordStr = popWordService.getPopWord(popWordVo, sf1Vo);
+		Map<String, Object> result = new ObjectMapper().readValue(popWordStr, new TypeReference<Map<String, Object>>() {});
+		
+		return result;
+	}	
+
+	/** 연과검색어 결과 */
+	@ResponseBody
+	@RequestMapping(value="/search/recommend.do", produces="application/json; charset=utf-8")
+	public Map<String, Object> recommend(TeaVO teaVO) throws Exception {
+		String popWordStr = recommendService.getRecommend(teaVO);
+		Map<String, Object> result = new ObjectMapper().readValue(popWordStr, new TypeReference<Map<String, Object>>() {});
+		
+		return result;
 	}
 }

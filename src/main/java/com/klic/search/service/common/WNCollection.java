@@ -96,7 +96,7 @@ public class WNCollection {
 				"RANK/DESC,DATE/DESC",  // set sort field (field,order) multi sort '/'
 				"basic,rpfmo,100",  // set sort field (field,order) multi sort '/'
 				"SYS_NM,CONTENT,UPPER_MENU_NM,MENU_NM,KEYWORD",// set search field
-				"DOCID,SYS_ID,SYS_NM,SYS_TY,CONTENT,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,CREATE_DT,UPDT_DT,URL,ALIAS,TERMS,TOPIC,KEYWORD",// set document field
+				"DOCID,SYS_ID,SYS_NM,SYS_TY,CONTENT/300,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,CREATE_DT,UPDT_DT,URL,ALIAS,TERMS,TOPIC,KEYWORD",// set document field
 				"", // set date range
 				"", // set rank range
 				"", // set prefix query, example: <fieldname:contains:value1>|<fieldname:contains:value2>/1,  (fieldname:contains:value) and ' ', or '|', not '!' / operator (AND:1, OR:0)
@@ -109,13 +109,13 @@ public class WNCollection {
 				"", // set categoryGroupBy (fieldname:value)
 				"", // set categoryQuery (fieldname:value)
 				"", // set property group (fieldname,min,max, groupcount)
-				"SYS_TY,ALIAS", // use check prefix query filed
+				"SYS_TY,SYS_ID,ALIAS", // use check prefix query filed
 				"CREATE_DT,UPDT_DT,TERMS,TOPIC", // set use check fast access field
 				"", // set multigroupby field
 				"", // set auth query (Auth Target Field, Auth Collection, Auth Reference Field, Authority Query)
 				"", // set Duplicate Detection Criterion Field, RANK/DESC,DATE/DESC
 				"webpage", // collection display name
-				"DOCID,SYS_ID,SYS_NM,SYS_TY,CONTENT,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,CREATE_DT,UPDT_DT,URL,ALIAS,TERMS,TOPIC,KEYWORD"
+				"DOCID,SYS_ID,SYS_NM,SYS_TY,CONTENT,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,CREATE_DT,UPDT_DT,URL,ALIAS,NONE,NONE,NONE"
 				}
 	         ,
 				{
@@ -126,7 +126,7 @@ public class WNCollection {
 				"RANK/DESC,DATE/DESC",  // set sort field (field,order) multi sort '/'
 				"basic,rpfmo,100",  // set sort field (field,order) multi sort '/'
 				"SYS_NM,UPPER_MENU_NM,MENU_NM,TITLE,CONTENT",// set search field
-				"DOCID,SYS_ID,SYS_NM,SYS_TY,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,BBS_ID,SN,TITLE,CONTENT,REG_NM,CREATE_DT,URL,ALIAS,TERMS,TOPIC,KEYWORD",// set document field
+				"DOCID,SYS_ID,SYS_NM,SYS_TY,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,BBS_ID,SN,TITLE,CONTENT/300,REG_NM,CREATE_DT,URL,ALIAS,TERMS,TOPIC,KEYWORD",// set document field
 				"", // set date range
 				"", // set rank range
 				"", // set prefix query, example: <fieldname:contains:value1>|<fieldname:contains:value2>/1,  (fieldname:contains:value) and ' ', or '|', not '!' / operator (AND:1, OR:0)
@@ -139,13 +139,13 @@ public class WNCollection {
 				"", // set categoryGroupBy (fieldname:value)
 				"", // set categoryQuery (fieldname:value)
 				"", // set property group (fieldname,min,max, groupcount)
-				"SYS_TY,ALIAS", // use check prefix query filed
+				"SYS_TY,SYS_ID,ALIAS", // use check prefix query filed
 				"CREATE_DT,TERMS,TOPIC", // set use check fast access field
 				"", // set multigroupby field
 				"", // set auth query (Auth Target Field, Auth Collection, Auth Reference Field, Authority Query)
 				"", // set Duplicate Detection Criterion Field, RANK/DESC,DATE/DESC
 				"board", // collection display name
-				"DOCID,SYS_ID,SYS_NM,SYS_TY,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,BBS_ID,SN,TITLE,CONTENT,REG_NM,CREATE_DT,URL,ALIAS,TERMS,TOPIC,KEYWORD",// set document field
+				"DOCID,SYS_ID,SYS_NM,SYS_TY,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,BBS_ID,SN,TITLE,CONTENT,REG_NM,CREATE_DT,URL,ALIAS,NONE,NONE,NONE",// set document field
 				}
 	         ,
 				{
@@ -156,7 +156,7 @@ public class WNCollection {
 				"RANK/DESC,DATE/DESC",  // set sort field (field,order) multi sort '/'
 				"basic,rpfmo,100",  // set sort field (field,order) multi sort '/'
 				"SYS_NM,UPPER_MENU_NM,MENU_NM,FILE_NAME,FILE_CONTENT",// set search field
-				"DOCID,SYS_ID,SYS_NM,SYS_TY,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,BBS_ID,SN,FILE_NAME,FILE_CONTENT,REG_NM,CREATE_DT,URL,FILE_URL,FILE_SIZE,FILE_EXT,ALIAS,TERMS,TOPIC,KEYWORD",// set document field
+				"DOCID,SYS_ID,SYS_NM,SYS_TY,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,BBS_ID,SN,FILE_NAME,FILE_CONTENT/300,REG_NM,CREATE_DT,URL,FILE_URL,FILE_SIZE,FILE_EXT,ALIAS,TERMS,TOPIC,KEYWORD",// set document field
 				"", // set date range
 				"", // set rank range
 				"", // set prefix query, example: <fieldname:contains:value1>|<fieldname:contains:value2>/1,  (fieldname:contains:value) and ' ', or '|', not '!' / operator (AND:1, OR:0)
@@ -169,13 +169,13 @@ public class WNCollection {
 				"", // set categoryGroupBy (fieldname:value)
 				"", // set categoryQuery (fieldname:value)
 				"", // set property group (fieldname,min,max, groupcount)
-				"SYS_TY,ALIAS", // use check prefix query filed
+				"SYS_TY,SYS_ID,ALIAS", // use check prefix query filed
 				"CREATE_DT,TERMS,TOPIC", // set use check fast access field
 				"", // set multigroupby field
 				"", // set auth query (Auth Target Field, Auth Collection, Auth Reference Field, Authority Query)
 				"", // set Duplicate Detection Criterion Field, RANK/DESC,DATE/DESC
 				"file", // collection display name
-				"DOCID,SYS_ID,SYS_NM,SYS_TY,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,BBS_ID,SN,FILE_NAME,FILE_CONTENT,REG_NM,CREATE_DT,URL,FILE_URL,FILE_SIZE,FILE_EXT,ALIAS,TERMS,TOPIC,KEYWORD",// set document field
+				"DOCID,SYS_ID,SYS_NM,SYS_TY,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,BBS_ID,SN,FILE_NAME,FILE_CONTENT,REG_NM,CREATE_DT,URL,FILE_URL,FILE_SIZE,FILE_EXT,ALIAS,NONE,NONE,NONE",// set document field
 				}
 	         ,
 				{
@@ -199,13 +199,13 @@ public class WNCollection {
 				"", // set categoryGroupBy (fieldname:value)
 				"", // set categoryQuery (fieldname:value)
 				"", // set property group (fieldname,min,max, groupcount)
-				"SYS_TY,ALIAS", // use check prefix query filed
+				"SYS_TY,SYS_ID,ALIAS", // use check prefix query filed
 				"CREATE_DT,UPDT_DT,TERMS,TOPIC", // set use check fast access field
 				"", // set multigroupby field
 				"", // set auth query (Auth Target Field, Auth Collection, Auth Reference Field, Authority Query)
 				"", // set Duplicate Detection Criterion Field, RANK/DESC,DATE/DESC
 				"menu", // collection display name
-				"DOCID,SYS_ID,SYS_NM,SYS_TY,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,CREATE_DT,UPDT_DT,URL,ALIAS,TERMS,TOPIC,KEYWORD",// set document field
+				"DOCID,SYS_ID,SYS_NM,SYS_TY,DATE,UPPER_MENU_NM,MENU_ID,MENU_NM,CREATE_DT,UPDT_DT,URL,ALIAS,NONE,NONE,NONE",// set document field
 				}
 		};
 	}

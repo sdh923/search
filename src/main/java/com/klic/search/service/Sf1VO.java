@@ -10,9 +10,9 @@ public class Sf1VO {
 	/** */
 	private String searchDebugType = "N";
 	/** 관리도구 IP */
-	private String managerIp;
+	private String managerIp = "49.50.166.167";
 	/** 관리도구 PORT */
-	private Integer managerPort;
+	private Integer managerPort = 7800;
 	public String getSearchIp() {
 		return searchIp;
 	}

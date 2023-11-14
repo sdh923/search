@@ -43,6 +43,8 @@ public class SearchVO {
 	String  updtDtEnd="";
 	/** 기관 검색 코드*/
 	String  sysTy="";
+	/** 시스템 검색 코드*/
+	String  sysId="";
 	
 	
 	/** 정렬 조건 검색*/
@@ -176,6 +178,12 @@ public class SearchVO {
 		this.sysTy = sysTy;
 	}	
 	
+	public String getSysId() {
+		return sysId;
+	}
+	public void setSysId(String sysId) {
+		this.sysId = sysId;
+	}	
 	
 	
 	
