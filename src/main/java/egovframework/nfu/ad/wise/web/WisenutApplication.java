@@ -1,4 +1,4 @@
-package com.klic;
+package egovframework.nfu.ad.wise.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

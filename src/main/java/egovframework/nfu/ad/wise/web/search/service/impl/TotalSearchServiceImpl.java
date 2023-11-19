@@ -1,4 +1,4 @@
-package com.klic.search.service.impl;
+package egovframework.nfu.ad.wise.web.search.service.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,15 +6,15 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.klic.search.service.SearchCollectionResult;
-import com.klic.search.service.SearchCollectionVO;
-import com.klic.search.service.SearchService;
-import com.klic.search.service.SearchVO;
-import com.klic.search.service.Sf1VO;
-import com.klic.search.service.TotalSearchService;
-import com.klic.search.service.common.WNCollection;
-import com.klic.search.service.common.WNSearch;
-import com.klic.search.service.common.WNUtils;
+import egovframework.nfu.ad.wise.web.search.service.SearchCollectionResult;
+import egovframework.nfu.ad.wise.web.search.service.SearchCollectionVO;
+import egovframework.nfu.ad.wise.web.search.service.SearchService;
+import egovframework.nfu.ad.wise.web.search.service.SearchVO;
+import egovframework.nfu.ad.wise.web.search.service.Sf1VO;
+import egovframework.nfu.ad.wise.web.search.service.TotalSearchService;
+import egovframework.nfu.ad.wise.web.search.service.common.WNCollection;
+import egovframework.nfu.ad.wise.web.search.service.common.WNSearch;
+import egovframework.nfu.ad.wise.web.search.service.common.WNUtils;
 
 @Service("TotalSearchService")
 public class TotalSearchServiceImpl implements TotalSearchService{

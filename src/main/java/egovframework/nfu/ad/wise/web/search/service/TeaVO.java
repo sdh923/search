@@ -1,4 +1,4 @@
-package com.klic.search.service;
+package egovframework.nfu.ad.wise.web.search.service;
 
 public class TeaVO {
 	
@@ -7,7 +7,7 @@ public class TeaVO {
 	/** TEA IP */
 	private String teaIp = "49.50.166.167";
 	/** TEA PORT */
-	private Integer teaPort = 11000;
+	private Integer teaPort = 11200;
 	/** 디버그메시지 */
 	private String debugType ="N";
 	/** 타임 아웃 */
@@ -22,6 +22,17 @@ public class TeaVO {
 	private String delimiter="^";
 	/** encoding */
 	private String encoding="utf8";
+	/** 컬렉셩 ID */
+	private String coll_id="";
+	/** 가져올 주제어 갯수 */
+	private Integer num_topics=30;
+	/** 분석 시작 월 */
+	private String start_month="";
+	/** 분석 종료 월 */
+	private String end_month="";
+	
+	
+	
 	
 	public String getQuery() {
 		return query;
@@ -82,6 +93,30 @@ public class TeaVO {
 	}
 	public void setEncoding(String encoding) {
 		this.encoding = encoding;
+	}
+	public String getColl_id() {
+		return coll_id;
+	}
+	public void setColl_id(String coll_id) {
+		this.coll_id = coll_id;
+	}
+	public Integer getNum_topics() {
+		return num_topics;
+	}
+	public void setNum_topics(Integer num_topics) {
+		this.num_topics = num_topics;
+	}
+	public String getStart_month() {
+		return start_month;
+	}
+	public void setStart_month(String start_month) {
+		this.start_month = start_month;
+	}
+	public String getEnd_month() {
+		return end_month;
+	}
+	public void setEnd_month(String end_month) {
+		this.end_month = end_month;
 	}
 	
 

@@ -1,4 +1,4 @@
-package com.klic.search.service;
+package egovframework.nfu.ad.wise.web.search.service;
 
 import java.util.HashMap;
 
@@ -18,7 +18,7 @@ import java.util.HashMap;
  *
  */
 
-public interface TotalSearchService {
+public interface SearchService {
 	
 	/** 검색결과 받기  */
 	SearchCollectionResult getSearch(SearchVO searchVO , Sf1VO sf1Vo) throws Exception;

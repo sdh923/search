@@ -1,4 +1,4 @@
-package com.klic.search.service;
+package egovframework.nfu.ad.wise.web.search.service;
 
 public class PopWordVO {
 	/** 인기검색어 타겟 popword 고정 참조 */

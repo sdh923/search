@@ -1,4 +1,4 @@
-package com.klic.search.service.impl;
+package egovframework.nfu.ad.wise.web.search.service.impl;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,26 +10,35 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.klic.search.service.RecommendService;
-import com.klic.search.service.TeaVO;
+import egovframework.nfu.ad.wise.web.search.service.TeaVO;
+import egovframework.nfu.ad.wise.web.search.service.TopicCloudService;
+import egovframework.nfu.ad.wise.web.search.service.common.WNUtils;
 
-@Service("RecommendService")
-public class RecommendServiceImpl implements RecommendService{
-	private static final Logger LOGGER = LoggerFactory.getLogger(RecommendServiceImpl.class);
+
+@Service("TopicCloudService")
+public class TopicCloudServiceImpl implements TopicCloudService{
+	private static final Logger LOGGER = LoggerFactory.getLogger(TopicCloudServiceImpl.class);
 	/**
 	 * 인기검색어 호출
 	 */
 	@Override
-	public String getRecommend(TeaVO teaVO) throws Exception {
-		String query = teaVO.getQuery() != null ? URLEncoder.encode(teaVO.getQuery(), "UTF-8") : "";
-		String server_id = teaVO.getServer_id(); //server01
-		String num = teaVO.getNum_relation_keyword(); // 출력 갯수
+	public String topicCloud(TeaVO teaVO) throws Exception {
+		int num_topics = teaVO.getNum_topics(); // 출력 갯수
+		String coll_id = teaVO.getColl_id(); //컬랙션 명
+
+		/** 검색 시작날짜 */
+		String start_month = teaVO.getStart_month();
+		start_month = WNUtils.checkReqXSS(start_month, WNUtils.getLastYearMonth());
+		
+		/** 검색 종료날짜*/
+		String end_month = teaVO.getEnd_month();
+		end_month = WNUtils.checkReqXSS(end_month, WNUtils.getCurrentYearMonth());
 	
 		String url = "";
 		String param = "";
 		
-		url = "http://" + teaVO.getTeaIp() + ":" + teaVO.getTeaPort() + "/relation_keyword_w.tea2";
-		param = "server_id=" + teaVO.getServer_id() + "&keyword=" + query + "&num_relation_keyword=" + num + "&format=json&delimiter=^&encoding=utf8";
+		url = "http://" + teaVO.getTeaIp() + ":" + teaVO.getTeaPort() + "/topic_cloud_w.tea2";
+		param = "coll_id=" + coll_id + "&num_topics=" + num_topics + "&start_date=" + start_month + "&end_date=" + end_month + "&format="+teaVO.getFormat();
 		
 		url = url+"?"+param;
 		if(teaVO.getDebugType().equals("Y")){

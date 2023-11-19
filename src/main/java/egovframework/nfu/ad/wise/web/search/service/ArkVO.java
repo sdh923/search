@@ -1,4 +1,4 @@
-package com.klic.search.service;
+package egovframework.nfu.ad.wise.web.search.service;
 
 public class ArkVO {
 	/** 키워드  */

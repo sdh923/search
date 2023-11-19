@@ -1,4 +1,4 @@
-package com.klic.search.controller;
+package egovframework.nfu.ad.wise.web.search.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,18 +13,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.klic.search.service.ArkService;
-import com.klic.search.service.ArkVO;
-import com.klic.search.service.PopWordService;
-import com.klic.search.service.PopWordVO;
-import com.klic.search.service.SearchCollectionResult;
-import com.klic.search.service.SearchCollectionVO;
-import com.klic.search.service.SearchVO;
-import com.klic.search.service.Sf1VO;
-import com.klic.search.service.RecommendService;
-import com.klic.search.service.TeaVO;
-import com.klic.search.service.TotalSearchService;
-import com.klic.search.service.common.WNUtils;
+
+import egovframework.nfu.ad.wise.web.search.service.ArkService;
+import egovframework.nfu.ad.wise.web.search.service.ArkVO;
+import egovframework.nfu.ad.wise.web.search.service.PopWordService;
+import egovframework.nfu.ad.wise.web.search.service.PopWordVO;
+import egovframework.nfu.ad.wise.web.search.service.RecommendService;
+import egovframework.nfu.ad.wise.web.search.service.SearchCollectionResult;
+import egovframework.nfu.ad.wise.web.search.service.SearchCollectionVO;
+import egovframework.nfu.ad.wise.web.search.service.SearchVO;
+import egovframework.nfu.ad.wise.web.search.service.Sf1VO;
+import egovframework.nfu.ad.wise.web.search.service.TeaVO;
+import egovframework.nfu.ad.wise.web.search.service.TopicCloudService;
+import egovframework.nfu.ad.wise.web.search.service.TotalSearchService;
+import egovframework.nfu.ad.wise.web.search.service.common.WNUtils;
 
 @Controller
 public class SearchController {
@@ -44,6 +46,12 @@ public class SearchController {
 	/** 연관검색어  */
 	@Resource(name="RecommendService")
 	private RecommendService recommendService;
+	
+	/** 주제클라우드  */
+	@Resource(name="TopicCloudService")
+	private TopicCloudService topicCloudService;
+	
+	
 	
 	
 	/** 통합검색 결과 API(JSON)*/
@@ -159,4 +167,14 @@ public class SearchController {
 		
 		return result;
 	}
+	
+	/** 주제 클라우드 결과 */
+	@ResponseBody
+	@RequestMapping(value="/search/topicCloud.do", produces="application/json; charset=utf-8")
+	public Map<String, Object> topicCloud(TeaVO teaVO) throws Exception {
+		String popWordStr = topicCloudService.topicCloud(teaVO);
+		Map<String, Object> result = new ObjectMapper().readValue(popWordStr, new TypeReference<Map<String, Object>>() {});
+		
+		return result;
+	}	
 }

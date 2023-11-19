@@ -1,6 +1,6 @@
-package com.klic.search.service.common;
+package egovframework.nfu.ad.wise.web.search.service.common;
 
-import com.klic.search.service.Sf1VO;
+import egovframework.nfu.ad.wise.web.search.service.Sf1VO;
 
 public class WNSearch {
 	private WNCommon common ;

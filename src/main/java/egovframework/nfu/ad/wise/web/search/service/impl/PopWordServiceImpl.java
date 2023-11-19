@@ -1,4 +1,4 @@
-package com.klic.search.service.impl;
+package egovframework.nfu.ad.wise.web.search.service.impl;
 
 import java.net.HttpURLConnection;
 import java.io.BufferedReader;
@@ -7,10 +7,11 @@ import java.net.URL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import com.klic.search.service.PopWordService;
-import com.klic.search.service.ArkService;
-import com.klic.search.service.PopWordVO;
-import com.klic.search.service.Sf1VO;
+
+import egovframework.nfu.ad.wise.web.search.service.ArkService;
+import egovframework.nfu.ad.wise.web.search.service.PopWordService;
+import egovframework.nfu.ad.wise.web.search.service.PopWordVO;
+import egovframework.nfu.ad.wise.web.search.service.Sf1VO;
 
 @Service("PopwordService")
 public class PopWordServiceImpl implements PopWordService{

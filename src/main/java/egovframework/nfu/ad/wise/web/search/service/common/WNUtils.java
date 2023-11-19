@@ -1,4 +1,4 @@
-package com.klic.search.service.common;
+package egovframework.nfu.ad.wise.web.search.service.common;
 
 
 import java.io.UnsupportedEncodingException;
@@ -8,6 +8,7 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -96,6 +97,20 @@ public class WNUtils {
         java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat
                 ("yyyy/MM/dd", java.util.Locale.KOREA);
         return dateFormat.format(new java.util.Date());
+    }
+    
+    public static String getCurrentYearMonth() {
+        java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat
+                ("yyyyMM", java.util.Locale.KOREA);
+        return dateFormat.format(new java.util.Date());
+    }
+    
+    public static String getLastYearMonth() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.YEAR, -1); // 1년 전으로 이동
+        java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat
+                ("yyyyMM", java.util.Locale.KOREA);
+        return dateFormat.format(calendar.getTime());
     }
 
     /**

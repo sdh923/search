@@ -1,4 +1,4 @@
-package com.klic.search.service.common;
+package egovframework.nfu.ad.wise.web.search.service.common;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

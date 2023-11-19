@@ -1,4 +1,4 @@
-package com.klic.search.service;
+package egovframework.nfu.ad.wise.web.search.service;
 
 /**
  * @Class Name : SearchService.java
@@ -10,7 +10,7 @@ package com.klic.search.service;
  * @ 2016.02.23   박도식                최초생성
  *
  */
-public interface RecommendService {
+public interface ArkService {
 	/** 자동완성  */
-	public String getRecommend(TeaVO teaVO)throws Exception;
+	public String getArk(ArkVO arkVo , Sf1VO sf1Vo )throws Exception;
 }
