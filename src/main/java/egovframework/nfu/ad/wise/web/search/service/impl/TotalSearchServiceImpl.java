@@ -50,6 +50,10 @@ public class TotalSearchServiceImpl implements TotalSearchService{
 		String searchField = searchVO.getSearchField();
 		searchField = WNUtils.checkReqXSS(searchField, "ALL");
 		
+		/** 정렬조건 */
+		String sort = searchVO.getSort();
+		sort = WNUtils.checkReqXSS(sort, "RANK/DESC,DATE/DESC");
+		
 		/** 출력갯수 */
 		int viewCount = searchVO.getBlockCount();
 		if(viewCount  == 0){
@@ -94,8 +98,6 @@ public class TotalSearchServiceImpl implements TotalSearchService{
 	
 		String exquery = ""; //exquery 조건 필드
 		String filterquery = ""; //filterquery 조건 필드
-		String realfilterquery = ""; //filterquery 실행 조건 필드
-		String categoryqeury = ""; //operation 조건 필드
 		
 		/** 작성일 시작 검색*/
 		if(searchVO.getCreateDtStart() !="") {
@@ -137,6 +139,21 @@ public class TotalSearchServiceImpl implements TotalSearchService{
 			//searchField 값이 있으면 설정, 없으면 기본검색필드
 	        if (!searchField.equals("")  && searchField.indexOf("ALL") == -1 ) {
 		        wnsearch.setCollectionInfoValue(collections[i], WNCollection.SEARCH_FIELD, searchField);
+			}
+	        
+			// SORT_FIELD 정렬 필드
+			if (!sort.equals("")){
+				wnsearch.setCollectionInfoValue(collections[i], WNCollection.SORT_FIELD, sort);	
+			}
+	        
+	        //exquery 설정
+	        if (!exquery.equals("")) {
+				wnsearch.setCollectionInfoValue(collections[i], WNCollection.EXQUERY_FIELD, exquery);
+			}
+	        
+	        //filterquery 설정
+	        if (!filterquery.equals("")) {
+				wnsearch.setCollectionInfoValue(collections[i], WNCollection.FILTER_OPERATION, filterquery);
 			}
 	        
 	    }

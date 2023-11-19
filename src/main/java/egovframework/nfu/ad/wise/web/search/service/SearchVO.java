@@ -32,6 +32,8 @@ public class SearchVO {
 	String collection = "ALL";
 	/** 디버그 YN*/
 	String debug = "N";
+	/** 정렬 조건*/
+	String sort = "";
 	
 	/** 작성일 시작일*/
 	String  createDtStart="";
@@ -184,8 +186,12 @@ public class SearchVO {
 	public void setSysId(String sysId) {
 		this.sysId = sysId;
 	}	
-	
-	
+	public String getSort() {
+		return sort;
+	}
+	public void setSort(String sort) {
+		this.sort = sort;
+	}
 	
 	
 }
