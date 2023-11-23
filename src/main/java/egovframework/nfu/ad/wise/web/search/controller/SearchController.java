@@ -177,4 +177,14 @@ public class SearchController {
 		
 		return result;
 	}	
+	
+	@RequestMapping(value = "/search/topicCloudSample.do", method = RequestMethod.GET)
+    public String topicCloudSample() {                   
+        return "search/topicCloudSample";
+    }
+	
+	@RequestMapping(value = "/search/recommendSample.do", method = RequestMethod.GET)
+    public String recommendSample() {                   
+        return "search/recommendSample";
+    }
 }

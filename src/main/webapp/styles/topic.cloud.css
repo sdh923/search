@@ -1,0 +1,122 @@
+
+/*태그클라우드*/
+ul.weighted {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 10px 20px 0;
+    font-size: 50%;
+    font-weight: bold;
+    display: block;
+    text-shadow: 0 0 1px rgba(0,0,0,0.3);
+    letter-spacing: -1px;
+    font-smooth:always;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-indent: 20px;
+    /*display:inline-block;*/
+    /*padding: 20px;*/
+    /*background-color: #fff;*/
+    /*border: 2px solid #aaa;*/
+    /*border-radius: 20px;*/
+    /*-moz-border-radius: 20px;*/
+    position: relative;
+    top:50%;
+}
+ul.weighted li {
+    display: inline;
+    padding: 5px;
+}
+
+ul.weighted li a.top {
+    color: orange;
+}
+
+ul.weighted li a {
+    margin: 2px;
+    text-decoration:none;
+    color:#111;
+    font-family:'Malgun Gothic' !important;
+}
+
+ul.weighted li span {
+    margin: 2px -5px 2px 5px;
+    text-decoration:none;
+    color:#111;
+    font-family:'Malgun Gothic' !important;
+}
+
+ul.weighted li a:hover, ul.weighted li a:focus {
+    color:#ffffff;
+    border:0 solid #f40;
+    background-color: #d6d6d6;
+}
+
+
+canvas#gradient {
+    float: right;
+    border:1px solid #000;
+    margin: 2px 20px
+}
+
+#infovis2 {
+    width:250px;
+    height: 250px;
+    /*background-color:#1a1a1a;*/
+    /*background-color:#f0f0f0;*/
+}
+
+.relation {
+    font-size: 12px;
+    overflow: hidden; background-color: #fff;
+    text-align: left;
+    /*font-weight: bold;*/
+    /*display: block;*/
+    text-shadow: 0 0 1px rgba(0,0,0,0.3);
+    letter-spacing: -1px;
+    font-smooth:always;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+
+/*토픽트렌드*/
+.legendLabel {
+    font-size: 11px;
+}
+
+.legend td {
+    border-right:none solid 1px #d9d9d9; border-bottom:solid 1px #d9d9d9;
+    border-style: hidden;
+    border-bottom:none 0 #d9d9d9;
+    border-right:none 0 #d9d9d9;
+}
+
+.legendColorBox td {
+    padding:0;
+    width: 5px;
+}
+
+.legendColorBox ul li {
+    list-style-type: none;
+    width: 5px;
+}
+
+.legendColorBox ul li {
+    width: 5px;
+    font-size:40px;
+    padding:0 0 0 20px;
+    height:10px;
+    list-style-type:disc;
+    line-height:10px;
+    list-style-position: inside;
+}
+
+*:first-child+html .legendColorBox ul li {
+    /*IE7 only */
+    font-size:10px;
+    padding:0 0 0 0;
+    width: 1px;
+}
